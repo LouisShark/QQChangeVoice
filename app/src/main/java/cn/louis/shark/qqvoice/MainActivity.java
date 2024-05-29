@@ -92,7 +92,12 @@ public class MainActivity extends AppCompatActivity {
                 toast("空灵");
                 VoiceFixer.fix(path, VoiceFixer.MODE_KONGLING);
                 break;
-
+            // Add a new case for the save button
+            case R.id.btn_save:
+                // Assuming the mode to save with effect is MODE_NORMAL for demonstration
+                VoiceFixer.saveSoundWithEffect(path, Environment.getExternalStorageDirectory().getAbsolutePath() + File.separatorChar + "louis_saved.wav", VoiceFixer.MODE_NORMAL);
+                toast("Sound saved with effect");
+                break;
             default:
                 break;
         }
